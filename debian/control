@@ -1,0 +1,19 @@
+Source: ntfs-dkms
+Section: kernel
+Priority: optional
+Maintainer: Silvertuanzi <1368882154@qq.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-dkms,
+ dh-exec
+Standards-Version: 4.7.4
+Rules-Requires-Root: no
+
+Package: ntfs-dkms
+Architecture: all
+Depends:
+ ${misc:Depends}
+Description: NTFS filesystem driver (DKMS)
+ This package provides the NTFS kernel filesystem driver through DKMS.
+ .
+ The module is automatically rebuilt for installed kernels and registers itself as the "ntfs" filesystem type.

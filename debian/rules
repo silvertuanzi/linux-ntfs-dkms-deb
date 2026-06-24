@@ -1,0 +1,5 @@
+#!/usr/bin/make -f
+
+export MODULE_VERSION := $(shell dpkg-parsechangelog -S Version)
+%:
+	dh $@ --with dkms
