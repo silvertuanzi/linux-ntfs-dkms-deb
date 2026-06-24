@@ -20,15 +20,20 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y debhelper dh-dkms dh-exec build-essential
 
+      - name: Ensure executable bits
+        run: |
+            chmod +x debian/rules
+            chmod +x debian/postinst
+            chmod +x debian/ntfs-dkms.install
+
       - name: Build package
         run: |
           dpkg-buildpackage -us -uc -b
 
       - name: Upload .deb to release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: ../*.deb
           body: "Automated build for tag ${{ github.ref_name }}"
-          overwrite: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
