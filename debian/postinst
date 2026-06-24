@@ -1,0 +1,24 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+configure)
+cat <<'EOF'
+============================================================
+WARNING:
+This driver registers itself as the "ntfs" filesystem type.
+If ntfs-3g is also installed, "mount -t ntfs" may use a 
+different driver than expected.
+You can verify the active driver with "findmnt -t ntfs,fuseblk": 
+ntfs    -> This NTFS driver
+fuseblk -> ntfs-3g
+============================================================
+EOF
+;;
+esac
+
+#DEBHELPER#
+
+exit 0
+
