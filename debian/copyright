@@ -4,6 +4,8 @@ Files: src/*
 Copyright:
  Various contributors
 License: GPL-2.0-or-later
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in /usr/share/common-licenses/GPL-2.
 
 Comment:
  Copyright notices vary between source files.
@@ -13,4 +15,6 @@ Files: debian/*
 Copyright:
  2026 Silvertuanzi
 License: GPL-2.0-or-later
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in /usr/share/common-licenses/GPL-2.
 
