@@ -1,3 +1,4 @@
 #!/usr/bin/dh-exec
 
 src/* usr/src/ntfs-${MODULE_VERSION}/
+00-ntfs.conf usr/lib/modprobe.d/
