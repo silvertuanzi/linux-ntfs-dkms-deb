@@ -43,6 +43,27 @@ If `ntfs-3g` is also installed, `mount -t ntfs` may select a different driver th
 For filesystem user space utilities, consider using [ntfsprogs-plus](https://github.com/ntfsprogs-plus/ntfsprogs-plus) which is maintained by the same maintainer of this driver. 
 A packaged version of these utilities will be provided in this repository in a future release.
 
+> [!TIP]
+> If `/usr/sbin/mount.ntfs` exists, `mount -t ntfs` will always call it first instead of mounting the filesystem directly, and since this file is provided by `ntfs-3g`, it will always use the `ntfs-3g` driver.  
+> If you want to use this new driver and keep `ntfs-3g` installed, use `mount -i -t ntfs` to ignore the mount helper, and this kernel ntfs driver will be used instead.  
+> A mount helper can be installed as `/sbin/mount.ntfsplus`:  
+> ```sh
+> #!/bin/sh
+> exec /usr/bin/mount -i -t ntfs "$@"
+> ```
+> Give it execute permission: `chmod +x /sbin/mount.ntfsplus`.  
+> Then you can use this driver by `mount -t ntfsplus` to avoid conflict with `ntfs-3g`.  
+> This approach is still experimental, and I'm considering packaging it in a separate package after further testing.  
+> Alternatively, in this way, you can also configure `udisks2` by editing `/etc/udisks2/mount_options.conf`: add `ntfsplus` to `ntfs_drivers`, then define `ntfs:ntfsplus_defaults=` and `ntfs:ntfsplus_allow=` to manage mount options.  
+> An example:
+> ```
+> ntfs_drivers=ntfsplus,ntfs3,ntfs
+> ntfs:ntfsplus_defaults=uid=$UID,gid=$GID,windows_names,symlink=native
+> ntfs:ntfsplus_allow=uid=$UID,gid=$GID,umask,dmask,fmask,locale,norecover,ignore_case,windows_names,compression,nocompression,big_writes,symlink
+> ```
+> Now GUI file managers (Nautilus, Dolphin, ...) will use this driver first.
+
+
 ## License
 
 Copyright notices and license information remain in the original source files.
