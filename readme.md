@@ -40,8 +40,8 @@ This driver provides two new options for symlinks compat.
 This driver registers itself as the `ntfs` filesystem type.
 If `ntfs-3g` is also installed, `mount -t ntfs` may select a different driver than expected. To avoid ambiguity, uninstalling `ntfs-3g` is recommended.
 
-For filesystem user space utilities, consider using [ntfsprogs-plus](https://github.com/ntfsprogs-plus/ntfsprogs-plus) which is maintained by the same maintainer of this driver. 
-A packaged version of these utilities will be provided in this repository in a future release.
+For filesystem user space utilities, consider using [ntfsprogs-plus](https://github.com/ntfsprogs-plus/ntfsprogs-plus) which is maintained by the same upstream maintainer as this driver.
+Debian packaging is available at [here](https://github.com/silvertuanzi/ntfsprogs-plus-debpackage).
 
 > [!TIP]
 > If `/usr/sbin/mount.ntfs` exists, `mount -t ntfs` will always call it first instead of mounting the filesystem directly, and since this file is provided by `ntfs-3g`, it will always use the `ntfs-3g` driver.  
