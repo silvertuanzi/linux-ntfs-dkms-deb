@@ -1,7 +1,7 @@
 # NTFS driver for debian
 
 This repository ports [namjaejeon/linux-ntfs](https://github.com/namjaejeon/linux-ntfs) driver to Debian/Ubuntu. 
-Files in `src/` are derived from upstream commit [640b7dd](https://github.com/namjaejeon/linux-ntfs/commit/640b7dde5def187d41042ec29a66fcbc46cdcc3a), with only `src/Makefile` modified for DKMS packaging.
+Files in `src/` are derived from upstream commit [ca149db](https://github.com/namjaejeon/linux-ntfs/commit/ca149db6b901a0d44cdd88e54047e0cd422ca70d), with only `src/Makefile` modified for DKMS packaging.
 
 This driver can be built in Linux 6.1+, and is included in Linux mainline 7.1+. 
 
