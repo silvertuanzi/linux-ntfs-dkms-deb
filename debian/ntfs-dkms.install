@@ -1,4 +1,6 @@
 #!/usr/bin/dh-exec
 
-src/* usr/src/ntfs-${MODULE_VERSION}/
+src/*.c usr/src/ntfs-${MODULE_VERSION}/
+src/*.h usr/src/ntfs-${MODULE_VERSION}/
+dkms-Makefile => usr/src/ntfs-${MODULE_VERSION}/Makefile
 00-ntfs.conf usr/lib/modprobe.d/
