@@ -1,5 +1,6 @@
 #!/usr/bin/dh-exec
 
+src/lib/* usr/src/ntfs-${MODULE_VERSION}/lib/
 src/*.c usr/src/ntfs-${MODULE_VERSION}/
 src/*.h usr/src/ntfs-${MODULE_VERSION}/
 dkms-Makefile => usr/src/ntfs-${MODULE_VERSION}/Makefile
