@@ -1,3 +1,10 @@
+ntfs-dkms (2026.09.21+fdfea0c) unstable; urgency=medium
+
+  * Package latest upstream snapshot.
+
+ -- Silvertuanzi <126318157+silvertuanzi@users.noreply.github.com>  Mon, 21 Sep 2026 14:40:54 +0000
+
+
 ntfs-dkms (2026.09.05+f60edbf) unstable; urgency=medium
 
   * Package latest upstream snapshot.
