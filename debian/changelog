@@ -1,3 +1,9 @@
+ntfs-dkms (2026.09.21+fdfea0c-1) unstable; urgency=medium
+
+  * Apply upstream fix for compressed attribute extents.
+
+ -- Silvertuanzi <126318157+silvertuanzi@users.noreply.github.com>  Wed, 30 Sep 2026 13:57:23 +0000
+
 ntfs-dkms (2026.09.21+fdfea0c) unstable; urgency=medium
 
   * Package latest upstream snapshot.

@@ -28,6 +28,10 @@ jobs:
             chmod +x debian/postinst
             chmod +x debian/ntfs-dkms.install
 
+      - name: Apply patch
+        run: |
+            git -C src apply ../0001-ntfs-only-require-compressed-size-on-first-extent.patch
+
       - name: Build package
         run: |
           dpkg-buildpackage -us -uc -b
